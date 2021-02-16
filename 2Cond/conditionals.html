@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>conditionals</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var x = 5;
+		var y = 6;
+		var bool = false;
+		
+		document.write("If ElseIf Esle");
+		if (x < y){
+			if (bool == false) {
+				document.write("<br/>bool = false!!");
+			}
+			document.write("<br/>x < y");
+		}
+		else if (x > y && bool == false)
+			document.write("<br/>x > y");
+		else if (x == y)
+			document.write("<br/>x = y");
+		else{
+			document.write("<br/>");
+			document.write("err");
+		}
+		var result = 1;
+
+
+
+		document.write("<br/>Switch Case");
+		switch(result){
+			case 1: document.write("Res = 1"); break; // break konulmasa res= 1 olduğundan case 1 çalışırdı ve sonunda brek olmadıpı için case 2 yide ekrana basardı!!!!!!!!!!
+			case 2: document.write("Res = 2"); break;
+			case 3: document.write("Res = 3"); break;
+			default: document.write("err");
+		}
+
+
+		document.write("<br/>If Esle");
+		document.write("<br/>");
+		x > y ? document.write("Yes") : document.write("No");
+
+	</script>
+</body>
+</html>
