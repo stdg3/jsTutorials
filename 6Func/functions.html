@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Functions</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		var sum = 0;
+
+		document.write("<br/>Functions<br/>");
+		
+		function printSome (text) {
+			document.write(text);
+			document.write("<br/>");
+
+		}
+
+		function count (x, y){
+			return x + y;
+		}
+
+		printSome("Hello");
+		printSome("JS");
+		sum = count(5,7);
+		document.write("<br/>Sum = " + sum);
+		
+		document.write("<br/>Global Vars<br/>");
+
+		var globalVar = 12;
+		var i = 6;
+
+		function test (){
+			document.write("<br/>test called<br/>");
+			var i = 5;
+			globalVar++;
+		}
+		test();
+		document.write("<br/> Globaller: "+ globalVar);
+
+	</script>
+
+</body>
+</html>
