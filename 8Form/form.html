@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>form</title>
+	<script type="text/javascript">
+		function valid(form){
+			var fail = false; 
+			var name = form.iName.value;
+			var pass = form.pName.value;
+			var rPass = form.pRName.value;
+			var state = form.state.value; // tıklama olmadığı halde bu değişken null olacaktır ""
+			var email = form.iMail.value;
+
+			var mailCtrl = /[0-9a-z_-]+@[0-9a-z_-]+\.[a-z]{2,5}/i; //i Lower Case farksız \. ise sadece bir nokta olmak zorunda demek {2,5} ise 2 ile beş arası karakter olmak zorunda
+
+			if (name == "" || name == " ") {
+				fail = "Input Name";
+			}
+			else if (email.split('@').length - 1 == 0) {
+				fail = "missing @";
+			}
+			else if (mailCtrl.test(email) == false) {
+				fail = "Input correct e-mail";
+			}
+			else if (pass == ""){
+				fail = "Input Password"
+			}
+			else if(pass != rPass){
+				fail = "Passwords not matched"
+			}
+			else if (state == ""){
+				fail = "Select sex"
+			}
+			if (fail) {
+				alert(fail);
+				//return false;
+			}
+			else{
+				window.location = "https://google.com"
+			}
+			
+
+		}
+
+	</script> 
+</head>
+<body>
+	<form action="" method="" name="testForm" id = "formId" >  <!--onsubmit=	"valid(this)"-->
+		
+		<label for ="nameId">Name:</label>
+		<input type="text" name="iName" placeholder="Name..." id = "nameId"><br/>
+
+		<label for ="mailId">e-mail:</label>
+		<input type="text" name="iMail" placeholder="e-mail..." id = "mailId"><br/>
+
+		<label for ="passID">Pass:</label>
+		<input type="password" name="pName" placeholder="Password..." id = "passID"><br/>
+
+		<label for ="rPassID">R-Pass:</label>
+		<input type="password" name="pRName" placeholder="Password..." id = "rPassID"><br/>
+
+		<span>Sex</span>
+		<label for="radiMale">Male</label>
+		<input type="radio" name="state" id = "radiMale" value="Male">
+		
+		<label for="radioFemale">Female</label>
+		<input type="radio" name="state" id = "radioFemale" value="Female"><br/>		
+		
+		<input type="button" onclick="valid(document.getElementById('formId'))" name="submit" value="Send">
+		
+	</form> </body> </html>

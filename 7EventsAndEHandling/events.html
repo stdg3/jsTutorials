@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>event</title>
+	<script type="text/javascript">
+		var i = 0;
+		function bClick (button){
+			alert("Clicked " + button.name + " val = "+ button.value);
+		}
+		function counter(element){
+			i++;
+			element.innerHTML = "" + i + " overed"; //counterin çağrıldığı yerdeki texti atamaya işe yarar
+		}
+
+	</script>
+</head>
+<body > <!--onload = "alert('Page loaded.')">-->
+	<input type="button" name="b" value="Click me" onclick="bClick(this)" />
+
+	<span onmouseover = "counter(this)">Over me</span>
+</body>
+</html>
