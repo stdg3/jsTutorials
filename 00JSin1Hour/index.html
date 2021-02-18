@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>JS</title>
+	<script type="text/javascript" src = "javaScript.js"></script>
+</head>
+<body>
+
+	<script type="text/javascript">
+		var num = 24;
+		var num2 = num * 2;
+		var str = "String";
+		var bool = false;
+		console.log(num);
+
+		//var name = prompt("what is your name?: ");
+		//console.log("Hello " + name);
+
+		
+		//math funcs
+		document.write("sum "+ (num + num2));
+		document.write("<br/>"+ Math.PI)
+		document.write("<br/>ceil 2.6: " + Math.ceil(2.6));
+		document.write("<br/>floor 2.6: " + Math.floor(2.6));
+		document.write("<br/>round 2.3: " + Math.round(2.3));
+		document.write("<br/>round 2.6: " + Math.round(2.6));
+		document.write("<br/>abs -9: " + Math.abs(-9));
+
+		
+		//arr
+		var colors = ["red", "blue", "green"];
+		document.write("<br/>" + colors.join(", "));
+		//apend to arr --> push
+		colors[3] = "grey";
+		colors[4] = 12;
+		colors[colors.length] = 5.67;
+		colors.push(false);
+		document.write("<br/>" +colors[3]);
+		document.write("<br/>" + colors.join(", "));
+
+		//loops
+		for(var i = 0; i<10; i += 3){
+			console.log(i + 1);
+		}
+
+		var j = 0;
+		while(j<10){
+			console.log(j);
+			j += 4;
+		}
+		j = 1;
+		do{
+			console.log("do while is called");
+		}while(j=0);
+
+		for(j=0; j < colors.length; j++){
+			console.log(colors[j]);
+		}
+
+		//conditional
+		if (colors[0] == "red") {
+			console.log("is red");
+		}
+		else
+			console.log("not red");
+
+		var res = 154;
+
+		switch(res){
+			case 50:
+				console.log("case 50!"); break;
+			case 105:
+				console.log("case 105!"); break;
+			case 154:
+				console.log("case 154!"); break;
+			case 200:
+				console.log("case 200!"); break;
+			default:
+				console.log("call if not called any cases");
+		}
+
+		//function
+		function myFunc(txt){
+			document.write("<br/>hello " + txt);
+		}
+		myFunc("js");
+
+		function mySum (a, b){
+			return a+b;
+		}
+
+		document.write("<br/>Sum:5+6= " +mySum(5,6));
+
+
+		//object
+		var language ={
+			firsName: "Java",
+			lastName: "Script",
+			age: 105,
+			coFounder: ["prog1", "prog2"],
+			useArea:{
+				fastFoot: "coffee machine",
+				edu: "uni",
+			}
+			//printAge: function(){
+			//	return this.age;
+			//}
+		}
+		console.log(language.firsName + language.lastName);
+		console.log(language.useArea);
+		console.log(language.useArea.fastFoot);
+		console.log(language.coFounder[1]);
+		//console.log(language.printAge()); //????? not worked
+
+		//constructor
+
+		function fruit(clr, shp){
+			this.color = clr;
+			this.shape = shp; 
+		}
+
+		var melon = new fruit("red", "round1");
+
+		console.log(melon.shape)
+
+		var apple = new Object();
+		apple.color = "green";
+		apple.shape = "round";
+
+		apple.describe = function(){
+			return "color is grn";
+		}
+
+		console.log(apple.describe());
+		console.log(apple.color);
+
+		function changeColor(newColor){
+			var elemnt = document.getElementById("myPargrahp"); // id ve classlar göre elemntleri bulabiliriz
+			//var elemnt = document.getElementByName("class name");
+			elemnt.style.color = newColor;
+		}
+
+		function validateForm(){
+			var element = document.forms["myForm"]["iName"].value;
+			if (element == "" || element == " ") {
+				alert("entry name");
+				return false;
+			}
+			//alert(element);
+		}
+	</script>
+
+	<p id="myPargrahp">~JavaScript~</p>
+	<button onmouseover ="changeColor('blue');">Blue</button>
+	<button onclick="changeColor('red');">Red</button>
+	<!--return ve funcName çağırıldığında return da eğer true dönerse page refresh olur yoksa kalır-->
+	<form name="myForm" action="" onsubmit="return validateForm()" method="post">Name: <input type="text" name="iName">
+		<input type="submit" name="Submit">
+		
+	</form>
+
+</body>
+</html>
