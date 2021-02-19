@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>asdas</title>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<style type="text/css">
+		body{
+			margin-top: 70px;
+			background-color: #282724;
+			
+		}
+		.card-block{
+			padding: 10px;
+			
+		}
+		#xtsitle{
+			color: #515259;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class= "row">
+			<div class="col-md-6 offset-md-3">
+				<h1 id="xtitle" class= "display-3 text-center text-light mb-3">KM Converter</h1>
+					<form>
+						<div class="form-group">
+							<input type="number" id="kmInput" placeholder="Input km" class="form-control form-control-lg text-center bg-primary text-light mb-2">
+						</div>
+					</form>
+					<div id="output">
+						<div class="card alert-warning mb-2">
+							<div class="card-block">
+								<h4>m:</h4>
+								<div id="mOutput">
+									
+								</div>
+							</div>
+						</div>
+						<div class="card alert-primary mb-2">
+							<div class="card-block">
+								<h4>cm:</h4>
+								<div id="cmOutput">
+									
+								</div>
+							</div>
+						</div>	
+						<div class="card alert-success mb2">
+							<div class="card-block">
+								<h4>mm:</h4>
+								<div id="mmOutput">
+									
+								</div>
+							</div>
+						</div>						
+					</div>
+		</div>
+
+	</div>
+<script type="text/javascript">
+	document.getElementById("output").style.visibility = "hidden";
+	document.getElementById("kmInput").addEventListener("input", function(e){
+		document.getElementById("output").style.visibility = "visible";
+		var km = e.target.value;
+		//console.log(km);
+		document.getElementById("mOutput").innerHTML = km * 1000;
+		document.getElementById("cmOutput").innerHTML = km * 100000;
+		document.getElementById("mmOutput").innerHTML = km * 1000000;
+	});
+
+</script>
+
+</body>
+</html>

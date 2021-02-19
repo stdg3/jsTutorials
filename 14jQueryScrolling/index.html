@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>scrolling whith jQuery</title>
+	<style type="text/css">
+		#more{
+			margin-top: 2000px;
+			margin-bottom: 1000px;
+		}
+
+	</style>
+
+</head>
+<body>
+	<div id="up"></div>
+	<a href="javascript://0" onclick="slowScroll('#more')">Wiki</a>
+
+	<dir id="more">More Info | <a href="javascript://0" onclick="slowScroll('#up')">up</a></dir>
+
+	<script src="js/jquery-3.5.1.min.js" charset="utf-8"></script>
+
+	<script>
+		function slowScroll(id){
+			var offset = 0;
+			$("html, body").animate({
+				scrollTop: $(id).offset().top - offset
+			}, 500);
+			return false;
+		}
+	</script>
+</body>
+</html>
